@@ -331,14 +331,16 @@ const Index = () => {
 };
 
 const LeafIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="animate-spin" style={{ flexShrink: 0 }}>
-    <circle cx="12" cy="12" r="10" stroke="#c5f536" strokeWidth="1.5" />
-    <path d="M12 2C12 2 7 7 7 12s5 10 5 10" stroke="#c5f536" strokeWidth="1" />
-    <path d="M12 2C12 2 17 7 17 12s-5 10-5 10" stroke="#c5f536" strokeWidth="1" />
-    <line x1="2" y1="12" x2="22" y2="12" stroke="#c5f536" strokeWidth="1" />
-    <line x1="4" y1="7" x2="20" y2="7" stroke="#c5f536" strokeWidth="0.75" />
-    <line x1="4" y1="17" x2="20" y2="17" stroke="#c5f536" strokeWidth="0.75" />
-  </svg>
+  <span className="ball-icon" style={{ flexShrink: 0, display: 'inline-flex' }}>
+    <svg width="18" height="18" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="30" fill="#c5f536" stroke="#1a1a2e" strokeWidth="2"/>
+      <polygon points="32,10 38,20 32,26 26,20" fill="#1a1a2e"/>
+      <polygon points="50,24 48,35 40,32 42,22" fill="#1a1a2e"/>
+      <polygon points="46,46 38,48 34,40 40,36" fill="#1a1a2e"/>
+      <polygon points="18,46 26,48 30,40 24,36" fill="#1a1a2e"/>
+      <polygon points="14,24 16,35 24,32 22,22" fill="#1a1a2e"/>
+    </svg>
+  </span>
 );
 
 const actividadesData = [
