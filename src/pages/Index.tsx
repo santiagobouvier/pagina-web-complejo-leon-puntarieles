@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Iconify from "@/components/Iconify";
 
 declare global {
@@ -8,6 +8,7 @@ declare global {
 }
 
 const Index = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({ once: true });
@@ -40,7 +41,7 @@ const Index = () => {
   return (
     <>
       {/* Header */}
-      <header className="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+      <header className="header position-fixed start-0 top-0 w-100">
         <div className="container">
           <div className="header-wrapper d-flex align-items-center justify-content-between">
             <div className="logo">
@@ -54,19 +55,22 @@ const Index = () => {
             <div className="d-flex align-items-center gap-4">
               <div className="btn-group">
                 <button
-                  className="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+                  className="toggle-menu round-45 d-flex align-items-center justify-content-center bg-white rounded-circle"
                   type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="true"
-                  aria-expanded="false"
+                  style={{ width: 45, height: 45, border: 'none', cursor: 'pointer' }}
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  aria-expanded={menuOpen}
                 >
-                  <Iconify icon="solar:hamburger-menu-line-duotone" className="menu-icon fs-8 text-dark" />
+                  <Iconify 
+                    icon={menuOpen ? "mdi:close" : "solar:hamburger-menu-line-duotone"} 
+                    className="menu-icon text-dark fs-7"
+                  />
                 </button>
-                <ul className="dropdown-menu dropdown-menu-end p-4">
+                <ul className={`dropdown-menu dropdown-menu-end p-4${menuOpen ? ' show' : ''}`}>
                   <div className="d-flex flex-column gap-6">
                     <div className="hstack justify-content-between border-bottom pb-6">
                       <p className="mb-0 fs-5 text-dark">Menu</p>
-                      <button type="button" className="btn-close opacity-75" aria-label="Close"></button>
+                      <button type="button" className="btn-close opacity-75" aria-label="Close" onClick={() => setMenuOpen(false)}></button>
                     </div>
                     <div className="d-flex flex-column gap-3">
                       <ul className="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
