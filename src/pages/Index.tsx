@@ -119,9 +119,7 @@ const Index = () => {
       <div className="page-wrapper overflow-hidden">
         {/* Banner Section */}
         <section id="inicio" className="banner-section position-relative d-flex align-items-end min-vh-100">
-          <video className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoPlay muted loop playsInline
-            poster="/images/services/services-img-1.jpg">
-          </video>
+          <img src="/images/resources/competencia-deportiva.png" alt="Fútbol en El León de la Sierra" className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" />
           <div className="container">
             <div className="d-flex flex-column gap-4 pb-8 position-relative z-1">
               <div className="row align-items-center">
