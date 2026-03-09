@@ -332,8 +332,12 @@ const Index = () => {
 
 const LeafIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="animate-spin" style={{ flexShrink: 0 }}>
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"
-      stroke="#c5f536" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="12" r="10" stroke="#c5f536" strokeWidth="1.5" />
+    <path d="M12 2C12 2 7 7 7 12s5 10 5 10" stroke="#c5f536" strokeWidth="1" />
+    <path d="M12 2C12 2 17 7 17 12s-5 10-5 10" stroke="#c5f536" strokeWidth="1" />
+    <line x1="2" y1="12" x2="22" y2="12" stroke="#c5f536" strokeWidth="1" />
+    <line x1="4" y1="7" x2="20" y2="7" stroke="#c5f536" strokeWidth="0.75" />
+    <line x1="4" y1="17" x2="20" y2="17" stroke="#c5f536" strokeWidth="0.75" />
   </svg>
 );
 
