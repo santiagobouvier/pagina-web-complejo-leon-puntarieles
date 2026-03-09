@@ -40,7 +40,7 @@ const Index = () => {
   return (
     <>
       {/* Header */}
-      <header className="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+      <header className="header position-fixed start-0 top-0 w-100">
         <div className="container">
           <div className="header-wrapper d-flex align-items-center justify-content-between">
             <div className="logo">
