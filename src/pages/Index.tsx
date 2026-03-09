@@ -55,19 +55,23 @@ const Index = () => {
             <div className="d-flex align-items-center gap-4">
               <div className="btn-group">
                 <button
-                  className="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+                  className="toggle-menu round-45 d-flex align-items-center justify-content-center bg-white rounded-circle"
                   type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="true"
-                  aria-expanded="false"
+                  style={{ width: 45, height: 45, border: 'none', cursor: 'pointer' }}
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  aria-expanded={menuOpen}
                 >
-                  <Iconify icon="solar:hamburger-menu-line-duotone" className="menu-icon fs-8 text-dark" />
+                  <Iconify 
+                    icon={menuOpen ? "mdi:close" : "solar:hamburger-menu-line-duotone"} 
+                    className="menu-icon text-dark" 
+                    style={{ fontSize: '1.5rem' }}
+                  />
                 </button>
-                <ul className="dropdown-menu dropdown-menu-end p-4">
+                <ul className={`dropdown-menu dropdown-menu-end p-4${menuOpen ? ' show' : ''}`}>
                   <div className="d-flex flex-column gap-6">
                     <div className="hstack justify-content-between border-bottom pb-6">
                       <p className="mb-0 fs-5 text-dark">Menu</p>
-                      <button type="button" className="btn-close opacity-75" aria-label="Close"></button>
+                      <button type="button" className="btn-close opacity-75" aria-label="Close" onClick={() => setMenuOpen(false)}></button>
                     </div>
                     <div className="d-flex flex-column gap-3">
                       <ul className="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
