@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Iconify from "@/components/Iconify";
 
 declare global {
   interface Window {
@@ -8,12 +9,10 @@ declare global {
 
 const Index = () => {
   useEffect(() => {
-    // Initialize AOS
     if (window.AOS) {
       window.AOS.init({ once: true });
     }
 
-    // Header scroll effect
     const handleScroll = () => {
       const header = document.querySelector("header");
       if (header) {
@@ -23,21 +22,14 @@ const Index = () => {
           header.classList.remove("fixed-header");
         }
       }
-
-      // Scroll to top button
       const btn = document.getElementById("scrollToTopBtn");
       if (btn) {
-        if (document.documentElement.scrollTop > 100) {
-          btn.style.display = "flex";
-        } else {
-          btn.style.display = "none";
-        }
+        btn.style.display = document.documentElement.scrollTop > 100 ? "flex" : "none";
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -68,7 +60,7 @@ const Index = () => {
                   data-bs-auto-close="true"
                   aria-expanded="false"
                 >
-                  <iconify-icon icon="solar:hamburger-menu-line-duotone" class="menu-icon fs-8 text-dark"></iconify-icon>
+                  <Iconify icon="solar:hamburger-menu-line-duotone" className="menu-icon fs-8 text-dark" />
                 </button>
                 <ul className="dropdown-menu dropdown-menu-end p-4">
                   <div className="d-flex flex-column gap-6">
@@ -148,31 +140,25 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Stats & Facts - El Complejo */}
+        {/* El Complejo */}
         <section id="complejo" className="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
           <div className="container">
             <div className="row gap-7 gap-xl-0">
-              <div className="col-xl-12 col-xxl-12">
+              <div className="col-xl-12">
                 <div className="d-flex flex-column gap-9">
                   <div className="row">
                     <div className="col-xxl-12">
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <h2 className="mb-0">El Complejo</h2>
-                        <p className="fs-5 mb-0">
-                          Un espacio deportivo, educativo y social ubicado en el corazón de Punta de Rieles, una zona con enorme potencial humano y deportivo.
-                        </p>
-                        <p className="fs-5 mb-0">
-                          El Complejo Deportivo El León de la Sierra cuenta con siete canchas de fútbol 11: cinco destinadas a la práctica de adultos y dos especialmente diseñadas para niños y jóvenes.
-                        </p>
-                        <p className="fs-5 mb-0">
-                          Pero más allá del deporte, este proyecto nace con una visión más profunda: convertirse en un motor de transformación comunitaria, donde el juego y el aprendizaje se encuentren, y donde cada rincón del predio esté pensado para ofrecer oportunidades reales de inclusión, formación y crecimiento.
-                        </p>
+                        <p className="fs-5 mb-0">Un espacio deportivo, educativo y social ubicado en el corazón de Punta de Rieles, una zona con enorme potencial humano y deportivo.</p>
+                        <p className="fs-5 mb-0">El Complejo Deportivo El León de la Sierra cuenta con siete canchas de fútbol 11: cinco destinadas a la práctica de adultos y dos especialmente diseñadas para niños y jóvenes.</p>
+                        <p className="fs-5 mb-0">Pero más allá del deporte, este proyecto nace con una visión más profunda: convertirse en un motor de transformación comunitaria, donde el juego y el aprendizaje se encuentren, y donde cada rincón del predio esté pensado para ofrecer oportunidades reales de inclusión, formación y crecimiento.</p>
                       </div>
                     </div>
                   </div>
                   <a href="#contacto" className="btn" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
                     <span className="btn-text">Hablemos</span>
-                    <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                    <Iconify icon="lucide:arrow-up-right" className="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm" />
                   </a>
                 </div>
               </div>
@@ -180,7 +166,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Actividades Section */}
+        {/* Actividades */}
         <section id="actividades" className="blog-section">
           <div className="container">
             <div className="row">
@@ -189,7 +175,6 @@ const Index = () => {
                   <h2 className="mb-0">Actividades</h2>
                 </div>
               </div>
-
               {actividadesData.map((act, i) => (
                 <div key={i} className="col-lg-6 mb-7">
                   <div className="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
@@ -197,14 +182,9 @@ const Index = () => {
                       <img src={act.img} alt={act.title} className="img-fluid" />
                     </a>
                     <div className="resources-details">
-                      <h4 className="mb-0" style={{ marginBottom: "10px !important" as any }}>{act.title}</h4>
+                      <h4 className="mb-0" style={{ marginBottom: 10 }}>{act.title}</h4>
                       <p className="mb-0">{act.desc}</p>
-                      {act.desc2 && (
-                        <>
-                          <br />
-                          <p className="mb-0">{act.desc2}</p>
-                        </>
-                      )}
+                      {act.desc2 && <><br /><p className="mb-0">{act.desc2}</p></>}
                     </div>
                   </div>
                 </div>
@@ -215,7 +195,7 @@ const Index = () => {
 
         <br />
 
-        {/* Compromiso Social Section */}
+        {/* Compromiso Social */}
         <section className="services py-5 py-lg-11 py-xl-12 bg-dark" id="services">
           <div className="container">
             <div className="d-flex flex-column gap-5 gap-xl-10">
@@ -225,9 +205,7 @@ const Index = () => {
                     <div className="col-xxl-8">
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <h2 className="mb-0 text-white">Compromiso Social y Comunitario</h2>
-                        <p className="fs-5 mb-0 text-white text-opacity-70">
-                          El León de la Sierra nace como un punto de encuentro donde el deporte, la educación, la conciencia ambiental y la inclusión social conviven en equilibrio, generando oportunidades reales para la comunidad de Punta de Rieles.
-                        </p>
+                        <p className="fs-5 mb-0 text-white text-opacity-70">El León de la Sierra nace como un punto de encuentro donde el deporte, la educación, la conciencia ambiental y la inclusión social conviven en equilibrio, generando oportunidades reales para la comunidad de Punta de Rieles.</p>
                       </div>
                     </div>
                   </div>
@@ -242,15 +220,13 @@ const Index = () => {
                           <li key={i} className="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
                             <div className="row w-100 align-items-center gx-3">
                               <div className="col-lg-4">
-                                <img src={item.img} style={{ width: "100%" }} alt={item.title} className="rounded" />
+                                <img src={item.img} style={{ width: "100%", borderRadius: 12 }} alt={item.title} />
                               </div>
                               <div className="col-lg-4">
                                 <h4 style={{ color: "white", textAlign: "center" }}>{item.title}</h4>
                               </div>
                               <div className="col-lg-4">
-                                <p className="text-white text-opacity-70 mb-0" style={{ textAlign: "center" }}>
-                                  {item.desc}
-                                </p>
+                                <p className="text-white text-opacity-70 mb-0" style={{ textAlign: "center" }}>{item.desc}</p>
                               </div>
                             </div>
                           </li>
@@ -264,7 +240,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Get in Touch / Hablemos */}
+        {/* Hablemos */}
         <section id="contacto" className="get-in-touch py-5 py-lg-11 py-xl-12">
           <div className="container">
             <div className="d-flex flex-column gap-5 gap-xl-10">
@@ -282,15 +258,12 @@ const Index = () => {
               <div className="row justify-content-between gap-7 gap-xl-0">
                 <div className="col-xl-3">
                   <p className="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                    ¿Querés reservar una cancha, hacer una consulta o conocer más sobre el proyecto?
-                    <br /><br />
-                    Estamos a disposición para conversar, coordinar una visita o avanzar con cualquier propuesta.
-                    Contactanos por los medios que te dejamos abajo.
+                    ¿Querés reservar una cancha, hacer una consulta o conocer más sobre el proyecto?<br /><br />
+                    Estamos a disposición para conversar, coordinar una visita o avanzar con cualquier propuesta. Contactanos por los medios que te dejamos abajo.
                   </p>
                 </div>
                 <div className="col-xl-8">
-                  <form className="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
-                    onSubmit={(e) => e.preventDefault()}>
+                  <form className="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" onSubmit={(e) => e.preventDefault()}>
                     <div>
                       <input type="text" className="form-control border-bottom border-dark" placeholder="Nombre" />
                     </div>
@@ -302,7 +275,7 @@ const Index = () => {
                     </div>
                     <button type="submit" className="btn w-100 justify-content-center">
                       <span className="btn-text">Enviar Mensaje</span>
-                      <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                      <Iconify icon="lucide:arrow-up-right" className="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm" />
                     </button>
                   </form>
                 </div>
@@ -321,7 +294,7 @@ const Index = () => {
                 <h2 className="mb-0 text-white">Forma parte de nuestra comunidad.</h2>
                 <div className="d-flex flex-column gap-2">
                   <a href="mailto:info@leondelasierra.com" className="link-hover hstack gap-3 text-white fs-5">
-                    <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
+                    <Iconify icon="lucide:map-pin" className="fs-7 text-primary" />
                     info@leondelasierra.com
                   </a>
                 </div>
@@ -351,22 +324,20 @@ const Index = () => {
           id="scrollToTopBtn"
           onClick={scrollToTop}
         >
-          <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
+          <Iconify icon="lucide:arrow-up" className="fs-7 text-dark" />
         </button>
       </div>
     </>
   );
 };
 
-/* Leaf SVG component */
 const LeafIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="animate-spin" style={{ flexShrink: 0 }}>
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75" 
-      stroke="#c5f536" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"
+      stroke="#c5f536" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
-/* Data arrays */
 const actividadesData = [
   {
     img: "/images/resources/escuela-y-formacion.png",
