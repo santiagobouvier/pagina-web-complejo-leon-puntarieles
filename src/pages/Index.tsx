@@ -8,6 +8,7 @@ declare global {
 }
 
 const Index = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({ once: true });
