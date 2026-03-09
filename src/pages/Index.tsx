@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
 
 declare global {
@@ -8,7 +8,6 @@ declare global {
 }
 
 const Index = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({ once: true });
@@ -58,19 +57,17 @@ const Index = () => {
                   className="toggle-menu round-45 d-flex align-items-center justify-content-center bg-white rounded-circle"
                   type="button"
                   style={{ width: 45, height: 45, border: 'none', cursor: 'pointer' }}
-                  onClick={() => setMenuOpen(!menuOpen)}
-                  aria-expanded={menuOpen}
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="true"
+                  aria-expanded="false"
                 >
-                  <Iconify 
-                    icon={menuOpen ? "mdi:close" : "solar:hamburger-menu-line-duotone"} 
-                    className="menu-icon text-dark fs-7"
-                  />
+                  <Iconify icon="solar:hamburger-menu-line-duotone" className="menu-icon text-dark fs-7" />
                 </button>
-                <ul className={`dropdown-menu dropdown-menu-end p-4${menuOpen ? ' show' : ''}`}>
+                <ul className="dropdown-menu dropdown-menu-end p-4">
                   <div className="d-flex flex-column gap-6">
                     <div className="hstack justify-content-between border-bottom pb-6">
                       <p className="mb-0 fs-5 text-dark">Menu</p>
-                      <button type="button" className="btn-close opacity-75" aria-label="Close" onClick={() => setMenuOpen(false)}></button>
+                      <button type="button" className="btn-close opacity-75" data-bs-toggle="dropdown" aria-label="Close"></button>
                     </div>
                     <div className="d-flex flex-column gap-3">
                       <ul className="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
@@ -335,8 +332,12 @@ const Index = () => {
 
 const LeafIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="animate-spin" style={{ flexShrink: 0 }}>
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"
-      stroke="#c5f536" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="12" r="10" stroke="#c5f536" strokeWidth="1.5" />
+    <path d="M12 2C12 2 7 7 7 12s5 10 5 10" stroke="#c5f536" strokeWidth="1" />
+    <path d="M12 2C12 2 17 7 17 12s-5 10-5 10" stroke="#c5f536" strokeWidth="1" />
+    <line x1="2" y1="12" x2="22" y2="12" stroke="#c5f536" strokeWidth="1" />
+    <line x1="4" y1="7" x2="20" y2="7" stroke="#c5f536" strokeWidth="0.75" />
+    <line x1="4" y1="17" x2="20" y2="17" stroke="#c5f536" strokeWidth="0.75" />
   </svg>
 );
 
