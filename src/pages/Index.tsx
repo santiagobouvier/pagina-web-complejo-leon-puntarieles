@@ -63,8 +63,7 @@ const Index = () => {
                 >
                   <Iconify 
                     icon={menuOpen ? "mdi:close" : "solar:hamburger-menu-line-duotone"} 
-                    className="menu-icon text-dark" 
-                    style={{ fontSize: '1.5rem' }}
+                    className="menu-icon text-dark fs-7"
                   />
                 </button>
                 <ul className={`dropdown-menu dropdown-menu-end p-4${menuOpen ? ' show' : ''}`}>
