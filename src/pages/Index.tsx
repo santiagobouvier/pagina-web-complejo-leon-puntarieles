@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
 import dbLogoAsset from "@/assets/logo-digitalbuilders.webp.asset.json";
+import plazaMemoriaAsset from "@/assets/plaza-museo-memoria.jpg.asset.json";
 
 declare global {
   interface Window {
