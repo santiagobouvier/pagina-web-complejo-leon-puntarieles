@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
 import dbLogoAsset from "@/assets/logo-digitalbuilders.webp.asset.json";
+import fotoPorton from "@/assets/foto-porton.jpg.asset.json";
+import fotoMerienda from "@/assets/foto-merienda.jpg.asset.json";
+import fotoJornada from "@/assets/foto-jornada.jpg.asset.json";
+import fotoEquipo from "@/assets/foto-equipo.jpg.asset.json";
 
 declare global {
   interface Window {
