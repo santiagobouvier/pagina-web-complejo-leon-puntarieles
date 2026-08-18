@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
 import dbLogoAsset from "@/assets/logo-digitalbuilders.webp.asset.json";
+import fotoPorton from "@/assets/foto-porton.jpg.asset.json";
+import fotoMerienda from "@/assets/foto-merienda.jpg.asset.json";
+import fotoJornada from "@/assets/foto-jornada.jpg.asset.json";
+import fotoEquipo from "@/assets/foto-equipo.jpg.asset.json";
 
 declare global {
   interface Window {
@@ -120,7 +124,7 @@ const Index = () => {
         {/* Banner Section */}
         <section id="inicio" className="banner-section position-relative d-flex align-items-end min-vh-100">
           <div className="banner-media">
-            <img src="/images/resources/competencia-deportiva.png" alt="Fútbol en El León de la Sierra" />
+            <img src={fotoPorton.url} alt="Entrada al predio del Complejo Deportivo El León de la Sierra en Punta de Rieles" style={{ objectPosition: "center 45%" }} />
           </div>
           <div className="container">
             <div className="d-flex flex-column gap-4 pb-8 position-relative z-1">
@@ -538,7 +542,7 @@ const actividadesData = [
   },
   {
     estado: "activo",
-    img: "/images/resources/plaza-punta-de-rieles.jpg",
+    img: fotoMerienda.url,
     title: "Encuentros con el Barrio",
     desc: "Organizamos jornadas abiertas para las familias de Punta de Rieles, con juegos, merienda y actividades para los más chicos. El predio ya funciona como punto de encuentro de la zona.",
   },
@@ -570,7 +574,7 @@ const actividadesData = [
 
 const compromisoData = [
   {
-    img: "/images/resources/cesiones-gratuitas.png",
+    img: fotoEquipo.url,
     title: "Cesión gratuita de canchas",
     desc: "El complejo ofrecerá horarios sin costo para escuelas, entes u organizaciones sociales con las que se formen acuerdos. Esta iniciativa busca garantizar el acceso igualitario al deporte para niños, niñas y jóvenes de distintos contextos.",
   },
@@ -585,7 +589,7 @@ const compromisoData = [
     desc: "El funcionamiento del complejo permitirá crear oportunidades laborales para entrenadores, personal de mantenimiento, empresas de maquinaria y muchas otras personas que formarán parte del día a día del proyecto.",
   },
   {
-    img: "/images/resources/educacion.png",
+    img: fotoJornada.url,
     title: "Espacio educativo y de recreación",
     desc: "Además del deporte, se generarán espacios orientados a la educación, la contención social y el disfrute comunitario, fortaleciendo el tejido social de la zona a través de actividades organizadas y abiertas a todos.",
   },
