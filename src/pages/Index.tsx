@@ -124,7 +124,7 @@ const Index = () => {
         {/* Banner Section */}
         <section id="inicio" className="banner-section position-relative d-flex align-items-end min-vh-100">
           <div className="banner-media">
-            <img src="/images/resources/competencia-deportiva.png" alt="Fútbol en El León de la Sierra" />
+            <img src={fotoPorton.url} alt="Entrada al predio del Complejo Deportivo El León de la Sierra en Punta de Rieles" style={{ objectPosition: "center 45%" }} />
           </div>
           <div className="container">
             <div className="d-flex flex-column gap-4 pb-8 position-relative z-1">
