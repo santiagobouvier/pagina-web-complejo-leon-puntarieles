@@ -574,7 +574,7 @@ const actividadesData = [
 
 const compromisoData = [
   {
-    img: "/images/resources/cesiones-gratuitas.png",
+    img: fotoEquipo.url,
     title: "Cesión gratuita de canchas",
     desc: "El complejo ofrecerá horarios sin costo para escuelas, entes u organizaciones sociales con las que se formen acuerdos. Esta iniciativa busca garantizar el acceso igualitario al deporte para niños, niñas y jóvenes de distintos contextos.",
   },
