@@ -589,7 +589,7 @@ const compromisoData = [
     desc: "El funcionamiento del complejo permitirá crear oportunidades laborales para entrenadores, personal de mantenimiento, empresas de maquinaria y muchas otras personas que formarán parte del día a día del proyecto.",
   },
   {
-    img: "/images/resources/educacion.png",
+    img: fotoJornada.url,
     title: "Espacio educativo y de recreación",
     desc: "Además del deporte, se generarán espacios orientados a la educación, la contención social y el disfrute comunitario, fortaleciendo el tejido social de la zona a través de actividades organizadas y abiertas a todos.",
   },
