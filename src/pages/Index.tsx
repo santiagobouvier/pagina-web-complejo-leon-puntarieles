@@ -305,16 +305,26 @@ const Index = () => {
         <section className="services py-5 py-lg-11 py-xl-12 bg-dark" id="services">
           <div className="container">
             <div className="d-flex flex-column gap-5 gap-xl-10">
-              <div className="row gap-7 gap-xl-0">
+              <div className="row gap-7 gap-xl-0 align-items-center">
                 <div className="col-xl-8 col-xxl-7">
                   <div className="row">
-                    <div className="col-xxl-8">
+                    <div className="col-xxl-10">
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <span className="eyebrow eyebrow-light">Por qué existe el proyecto</span>
                         <h2 className="mb-0 text-white">Compromiso Social y Comunitario</h2>
                         <p className="fs-5 mb-0 text-white text-opacity-70">El León de la Sierra nace como un punto de encuentro donde el deporte, la educación, la conciencia ambiental y la inclusión social conviven en equilibrio, generando oportunidades reales para la comunidad de Punta de Rieles.</p>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 col-xxl-5">
+                  <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <img
+                      src={fotoEquipo.url}
+                      alt="Equipo Leones de Punta Rieles"
+                      className="img-fluid rounded-4 w-100"
+                      style={{ aspectRatio: "4 / 3", objectFit: "cover" }}
+                    />
                   </div>
                 </div>
               </div>
@@ -325,15 +335,15 @@ const Index = () => {
                       <ul className="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                         {compromisoData.map((item, i) => (
                           <li key={i} className="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                            <div className="row w-100 align-items-center gx-3">
-                              <div className="col-lg-4">
-                                <img src={item.img} style={{ width: "100%", borderRadius: 12 }} alt={item.title} />
+                            <div className="row w-100 align-items-center gx-3 gy-3 gy-lg-0">
+                              <div className="col-lg-1 col-md-2 col-12 text-lg-start text-center">
+                                <Iconify icon={item.icon} className="fs-1 text-primary" />
                               </div>
-                              <div className="col-lg-4">
-                                <h4 style={{ color: "white", textAlign: "center" }}>{item.title}</h4>
+                              <div className="col-lg-4 col-md-10 col-12">
+                                <h4 className="mb-0 text-white text-lg-start text-center">{item.title}</h4>
                               </div>
-                              <div className="col-lg-4">
-                                <p className="text-white text-opacity-70 mb-0" style={{ textAlign: "center" }}>{item.desc}</p>
+                              <div className="col-lg-7 col-md-12 col-12">
+                                <p className="text-white text-opacity-70 mb-0 text-lg-start text-center">{item.desc}</p>
                               </div>
                             </div>
                           </li>
@@ -574,32 +584,32 @@ const actividadesData = [
 
 const compromisoData = [
   {
-    img: fotoEquipo.url,
+    icon: "lucide:hand-heart",
     title: "Cesión gratuita de canchas",
     desc: "El complejo ofrecerá horarios sin costo para escuelas, entes u organizaciones sociales con las que se formen acuerdos. Esta iniciativa busca garantizar el acceso igualitario al deporte para niños, niñas y jóvenes de distintos contextos.",
   },
   {
-    img: "/images/resources/entorno.png",
+    icon: "lucide:building-2",
     title: "Mejora del entorno urbano",
     desc: "Se propone colaborar activamente con el desarrollo de la zona, gestionando el pavimentado e iluminación del acceso al predio y su área de influencia, generando así un entorno más seguro, accesible y digno para todos.",
   },
   {
-    img: "/images/resources/empleo.png",
+    icon: "lucide:briefcase",
     title: "Generación de empleo local",
     desc: "El funcionamiento del complejo permitirá crear oportunidades laborales para entrenadores, personal de mantenimiento, empresas de maquinaria y muchas otras personas que formarán parte del día a día del proyecto.",
   },
   {
-    img: fotoJornada.url,
+    icon: "lucide:book-open",
     title: "Espacio educativo y de recreación",
     desc: "Además del deporte, se generarán espacios orientados a la educación, la contención social y el disfrute comunitario, fortaleciendo el tejido social de la zona a través de actividades organizadas y abiertas a todos.",
   },
   {
-    img: "/images/resources/sustentabilidad.png",
+    icon: "lucide:sun",
     title: "Autosustentabilidad energética y ambiental",
     desc: "El predio estará orientado al uso de energía solar y la recolección de agua, incorporando prácticas sustentables que reduzcan el impacto ambiental y sirvan como ejemplo para la comunidad.",
   },
   {
-    img: "/images/resources/conciencia-alimentaria.png",
+    icon: "lucide:apple",
     title: "Conciencia alimentaria y cuidado del entorno",
     desc: "Se impulsará la plantación de árboles frutales y vegetales, fomentando el cultivo propio, la alimentación saludable y el uso consciente de los recursos naturales como parte del aprendizaje diario.",
   },
