@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# Complejo Punta de Rieles
 
-## Project info
+Voy a subir un archivo ZIP que contiene una página web completa.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Tu tarea es analizar ese proyecto y crear un nuevo proyecto dentro de Lovable que reproduzca el sitio web lo más fielmente posible.
 
-## How can I edit this code?
+IMPORTANTE:  
 
-There are several ways of editing your application.
+No quiero un rediseño ni una reinterpretación del sitio.  
 
-**Use Lovable**
+El objetivo es crear un clon visual y funcional del sitio original.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Reglas estrictas que debes seguir:
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Analiza todos los archivos del ZIP antes de generar el nuevo proyecto:
 
-**Use your preferred IDE**
+   - HTML
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+   - CSS
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   - JavaScript
 
-Follow these steps:
+   - carpetas de assets
+
+   - imágenes
+
+   - fuentes
+
+   - librerías
+
+2. Mantén la misma estructura de archivos y jerarquía del proyecto siempre que sea posible.
+
+3. Respeta la estructura HTML original:
+
+   - mismos contenedores
+
+   - mismas clases
+
+   - misma jerarquía del DOM
+
+   - mismas secciones
+
+4. No cambies:
+
+   - textos
+
+   - contenido
+
+   - orden de secciones
+
+   - nombres de clases
+
+   - estructura del layout
+
+5. Reproduce exactamente el diseño visual:
+
+   - tamaños de fuente
+
+   - márgenes
+
+   - paddings
+
+   - grids
+
+   - alineaciones
+
+   - colores
+
+   - sombras
+
+   - bordes
+
+   - spacing
+
+6. Respeta el comportamiento responsive original.
+
+   El sitio debe verse igual en:
+
+   - desktop
+
+   - tablet
+
+   - mobile
+
+7. Mantén los mismos breakpoints CSS que utiliza el proyecto original.
+
+8. Reproduce cualquier comportamiento JavaScript existente:
+
+   - sliders
+
+   - menús
+
+   - animaciones
+
+   - interacciones
+
+   - efectos visuales
+
+9. Usa las mismas imágenes y assets del proyecto original.
+
+10. No simplifiques el código si eso cambia el comportamiento visual.
+
+11. El objetivo es que el resultado final sea visualmente indistinguible del sitio original.
+
+12. Si hay varias páginas HTML, debes recrear todas las páginas dentro del proyecto.
+
+13. El resultado final debe ser un sitio web completamente funcional que se comporte exactamente igual al original.
+
+Objetivo final:
+
+Crear un clon del sitio web original utilizando los archivos del ZIP como referencia principal, manteniendo el mismo diseño, la misma estructura y el mismo comportamiento en todos los dispositivos.
+
+This project was built with [Lovable](https://lovable.dev).
+
+**Live app**: https://leonsierra.lovable.app
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e5ac2e22-dee0-4b5d-8dfd-33c428fdfe1b).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
