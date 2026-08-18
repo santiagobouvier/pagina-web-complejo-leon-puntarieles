@@ -92,8 +92,8 @@ const Index = () => {
                           </a>
                         </li>
                         <li className="header-item">
-                          <a href="#galeria" className="header-link hstack gap-2 fs-7 fw-bold text-dark">
-                            <LeafIcon /> Galería
+                          <a href="#propuesta" className="header-link hstack gap-2 fs-7 fw-bold text-dark">
+                            <LeafIcon /> Nuestra Propuesta
                           </a>
                         </li>
                         <li className="header-item">
@@ -104,8 +104,6 @@ const Index = () => {
                       </ul>
                     </div>
                     <div>
-                      <a className="text-dark" href="#">+1-212-456-7890</a>
-                      <br />
                       <a className="fs-8 text-dark fw-bold" href="mailto:info@leondelasierra.com">info@leondelasierra.com</a>
                     </div>
                   </div>
@@ -127,7 +125,7 @@ const Index = () => {
                 <div className="col-xl-12">
                   <div className="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                     <p className="mb-0 text-white fs-5 text-opacity-70">
-                      Fútbol, formación, eventos y <span className="text-primary">compromiso social</span> en Punta de Rieles.
+                      Ya estamos en actividad. Fútbol, formación y <span className="text-primary">compromiso social</span> en Punta de Rieles, en desarrollo constante.
                     </p>
                   </div>
                 </div>
@@ -150,8 +148,8 @@ const Index = () => {
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                         <h2 className="mb-0">El Complejo</h2>
                         <p className="fs-5 mb-0">Un espacio deportivo, educativo y social ubicado en el corazón de Punta de Rieles, una zona con enorme potencial humano y deportivo.</p>
-                        <p className="fs-5 mb-0">El Complejo Deportivo El León de la Sierra cuenta con siete canchas de fútbol 11: cinco destinadas a la práctica de adultos y dos especialmente diseñadas para niños y jóvenes.</p>
-                        <p className="fs-5 mb-0">Pero más allá del deporte, este proyecto nace con una visión más profunda: convertirse en un motor de transformación comunitaria, donde el juego y el aprendizaje se encuentren, y donde cada rincón del predio esté pensado para ofrecer oportunidades reales de inclusión, formación y crecimiento.</p>
+                        <p className="fs-5 mb-0">Hoy el predio ya está en uso: se entrena, se juega y se organizan actividades abiertas al barrio, mientras el complejo toma forma. El proyecto contempla siete canchas de fútbol 11 —cinco para adultos y dos pensadas para niños y jóvenes— que se irán habilitando por etapas.</p>
+                        <p className="fs-5 mb-0">Pero más allá del deporte, el proyecto tiene una visión más profunda: convertirse en un motor de transformación comunitaria, donde el juego y el aprendizaje se encuentren, y donde cada rincón del predio esté pensado para ofrecer oportunidades reales de inclusión, formación y crecimiento.</p>
                       </div>
                     </div>
                   </div>
@@ -165,6 +163,32 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Nuestra Propuesta */}
+        <section id="propuesta" className="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
+          <div className="container">
+            <div className="row">
+              <div className="col-xxl-9">
+                <div className="d-flex flex-column gap-6 mb-8" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                  <h2 className="mb-0">Nuestra Propuesta</h2>
+                  <p className="fs-5 mb-0">Somos diferentes al resto. Trabajamos con un equipo de entrenadores con Licencia PRO, y nuestro foco está puesto en el proceso de aprendizaje antes que en el resultado inmediato.</p>
+                  <p className="fs-5 mb-0">Recibimos a cada jugador y jugadora desde el punto en que está, sin discriminación de ningún tipo, y lo acompañamos para que mejore. Desde la escuelita hasta adolescentes y mayores.</p>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {propuestaData.map((item, i) => (
+                <div key={i} className="col-lg-6 col-xl-3 mb-7">
+                  <div className="d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="1000">
+                    <Iconify icon={item.icon} className="fs-2 text-primary" />
+                    <h4 className="mb-0">{item.title}</h4>
+                    <p className="mb-0">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Actividades */}
         <section id="actividades" className="blog-section">
           <div className="container">
@@ -172,14 +196,42 @@ const Index = () => {
               <div className="col-xxl-8 mb-7">
                 <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                   <h2 className="mb-0">Actividades</h2>
+                  <p className="fs-5 mb-0">Esto es lo que ya está funcionando, y lo que viene en camino a medida que el complejo se desarrolla.</p>
                 </div>
               </div>
-              {actividadesData.map((act, i) => (
+            </div>
+
+            <div className="row">
+              <div className="col-12 mb-6">
+                <h4 className="mb-0" data-aos="fade-up" data-aos-duration="1000">En funcionamiento</h4>
+              </div>
+              {actividadesData.filter((a) => a.estado === "activo").map((act, i) => (
                 <div key={i} className="col-lg-6 mb-7">
                   <div className="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                    <a href="#" className="resources-img resources-img-blog position-relative overflow-hidden d-block">
+                    <div className="resources-img resources-img-blog position-relative overflow-hidden d-block">
                       <img src={act.img} alt={act.title} className="img-fluid" />
-                    </a>
+                    </div>
+                    <div className="resources-details">
+                      <h4 className="mb-0" style={{ marginBottom: 10 }}>{act.title}</h4>
+                      <p className="mb-0">{act.desc}</p>
+                      {act.desc2 && <><br /><p className="mb-0">{act.desc2}</p></>}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="row mt-6">
+              <div className="col-12 mb-6">
+                <h4 className="mb-0" data-aos="fade-up" data-aos-duration="1000">En desarrollo</h4>
+                <p className="mb-0 mt-2">Etapas previstas del proyecto, en construcción progresiva.</p>
+              </div>
+              {actividadesData.filter((a) => a.estado === "desarrollo").map((act, i) => (
+                <div key={i} className="col-lg-6 mb-7">
+                  <div className="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div className="resources-img resources-img-blog position-relative overflow-hidden d-block">
+                      <img src={act.img} alt={act.title} className="img-fluid" />
+                    </div>
                     <div className="resources-details">
                       <h4 className="mb-0" style={{ marginBottom: 10 }}>{act.title}</h4>
                       <p className="mb-0">{act.desc}</p>
@@ -257,20 +309,25 @@ const Index = () => {
               <div className="row justify-content-between gap-7 gap-xl-0">
                 <div className="col-xl-3">
                   <p className="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                    ¿Querés reservar una cancha, hacer una consulta o conocer más sobre el proyecto?<br /><br />
+                    ¿Querés sumar a un chico o una chica a la escuela, hacer una consulta o conocer más sobre el proyecto?<br /><br />
                     Estamos a disposición para conversar, coordinar una visita o avanzar con cualquier propuesta. Contactanos por los medios que te dejamos abajo.
                   </p>
                 </div>
                 <div className="col-xl-8">
-                  <form className="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" onSubmit={(e) => e.preventDefault()}>
+                  <form className="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" onSubmit={(e) => {
+                    e.preventDefault();
+                    const fd = new FormData(e.currentTarget);
+                    const cuerpo = `Nombre: ${fd.get("nombre") || ""}\nEmail: ${fd.get("email") || ""}\n\n${fd.get("asunto") || ""}`;
+                    window.location.href = `mailto:info@leondelasierra.com?subject=${encodeURIComponent("Consulta desde la web")}&body=${encodeURIComponent(cuerpo)}`;
+                  }}>
                     <div>
-                      <input type="text" className="form-control border-bottom border-dark" placeholder="Nombre" />
+                      <input type="text" name="nombre" required className="form-control border-bottom border-dark" placeholder="Nombre" />
                     </div>
                     <div>
-                      <input type="email" className="form-control border-bottom border-dark" placeholder="Email" />
+                      <input type="email" name="email" required className="form-control border-bottom border-dark" placeholder="Email" />
                     </div>
                     <div>
-                      <textarea className="form-control border-bottom border-dark" placeholder="Asunto" rows={3}></textarea>
+                      <textarea name="asunto" required className="form-control border-bottom border-dark" placeholder="Asunto" rows={3}></textarea>
                     </div>
                     <button type="submit" className="btn w-100 justify-content-center">
                       <span className="btn-text">Enviar Mensaje</span>
@@ -301,13 +358,13 @@ const Index = () => {
             </div>
             <div className="col-md-4 col-xl-2 mb-8 mb-xl-0">
               <ul className="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-                <li><a className="link-hover fs-5 text-white" href="#!">Facebook</a></li>
-                <li><a className="link-hover fs-5 text-white" href="#!">Instagram</a></li>
-                <li><a className="link-hover fs-5 text-white" href="#!">Twitter</a></li>
+                <li><a className="link-hover fs-5 text-white" href="#propuesta">Nuestra Propuesta</a></li>
+                <li><a className="link-hover fs-5 text-white" href="#actividades">Actividades</a></li>
+                <li><a className="link-hover fs-5 text-white" href="#contacto">Contacto</a></li>
               </ul>
             </div>
             <div className="col-md-4 col-xl-3 mb-8 mb-xl-0">
-              <p className="mb-0 text-white text-opacity-70 text-md-end">© Leones de Punta Rieles copyright 2025</p>
+              <p className="mb-0 text-white text-opacity-70 text-md-end">© Leones de Punta Rieles 2026</p>
             </div>
           </div>
         </div>
@@ -351,37 +408,72 @@ const LeafIcon = () => (
   </span>
 );
 
+const propuestaData = [
+  {
+    icon: "lucide:graduation-cap",
+    title: "Entrenadores con Licencia PRO",
+    desc: "Un equipo formado y habilitado, con la preparación necesaria para acompañar cada etapa del desarrollo deportivo.",
+  },
+  {
+    icon: "lucide:trending-up",
+    title: "El proceso antes que el resultado",
+    desc: "Priorizamos el aprendizaje sostenido por encima del resultado inmediato. Se juega para crecer.",
+  },
+  {
+    icon: "lucide:users",
+    title: "Sin discriminación",
+    desc: "Las puertas están abiertas a todos, sin distinción de origen, nivel ni condición. El deporte como derecho.",
+  },
+  {
+    icon: "lucide:heart-handshake",
+    title: "Desde donde estés",
+    desc: "Cada jugador arranca desde su punto de partida real. De la escuelita a adolescentes y mayores.",
+  },
+];
+
 const actividadesData = [
   {
+    estado: "activo",
     img: "/images/resources/escuela-y-formacion.png",
     title: "Escuela de Formación y Captación",
-    desc: "Programa formativo dirigido a jugadores y jugadoras de todas las edades, desde categorías iniciales hasta mayores.",
-    desc2: "Se enfoca en el desarrollo técnico y humano de los participantes, integrando también a escuelas, entes u organizaciones con las que se establezcan acuerdos. Se prevé, además, la cesión de horarios sin costo para instituciones que lo necesiten.",
+    desc: "Programa formativo en marcha, dirigido a jugadores y jugadoras de todas las edades, desde categorías iniciales hasta mayores.",
+    desc2: "Trabajamos el desarrollo técnico y humano de cada participante, e integramos a escuelas, entes u organizaciones con las que se establecen acuerdos, incluida la cesión de horarios sin costo para instituciones que lo necesiten.",
   },
   {
+    estado: "activo",
     img: "/images/resources/competencia-deportiva.png",
     title: "Competencia Deportiva",
-    desc: "Organización y apoyo a competencias en todas las categorías: niños, divisiones formativas y adultos. El objetivo es fomentar la participación activa y sostenida en el deporte, generando un espacio competitivo sano y accesible para toda la comunidad.",
+    desc: "Participamos y damos apoyo a competencias en todas las categorías: niños, divisiones formativas y adultos. El objetivo es sostener la participación activa en el deporte, en un espacio competitivo sano y accesible para toda la comunidad.",
   },
   {
+    estado: "activo",
+    img: "/images/resources/resources-1.jpg",
+    title: "Encuentros con el Barrio",
+    desc: "Organizamos jornadas abiertas para las familias de Punta de Rieles, con juegos, merienda y actividades para los más chicos. El predio ya funciona como punto de encuentro de la zona.",
+  },
+  {
+    estado: "desarrollo",
     img: "/images/resources/campeonato.png",
     title: "Campeonatos y Torneos",
     desc: "Realización de campeonatos y torneos con alcance interclubes, interescolar e interligas. Estos encuentros permitirán el crecimiento competitivo de jugadores y equipos de la zona, fortaleciendo el vínculo con otras instituciones deportivas y educativas.",
   },
   {
+    estado: "desarrollo",
     img: "/images/resources/alquiler-canchas.png",
     title: "Alquiler de Canchas",
-    desc: "Disponibilidad de las canchas para particulares y ligas que deseen organizar partidos, entrenamientos o torneos. Las instalaciones estarán abiertas a la comunidad con horarios flexibles y condiciones accesibles para promover el uso continuo del predio.",
+    desc: "A medida que se habiliten, las canchas estarán disponibles para particulares y ligas que deseen organizar partidos, entrenamientos o torneos, con horarios flexibles y condiciones accesibles.",
   },
   {
+    estado: "desarrollo",
     img: "/images/resources/salon.png",
     title: "Alquiler del Predio y Salón",
-    desc: "El complejo contará con un salón multipropósito y espacios adecuados para la realización de eventos sociales, encuentros institucionales, talleres, celebraciones y actividades recreativas. Todo estará disponible para alquiler según demanda.",
+    desc: "El complejo contará con un salón multipropósito y espacios adecuados para eventos sociales, encuentros institucionales, talleres, celebraciones y actividades recreativas.",
   },
   {
+    estado: "desarrollo",
     img: "/images/resources/huerta.png",
     title: "Paseos y Huerta Didáctica",
-    desc: "Creación de una huerta educativa abierta a visitas guiadas, especialmente orientada a centros deportivos, escuelas y organizaciones sociales. A través de esta propuesta se busca enseñar el cultivo de alimentos, promover el cuidado del medio ambiente y fortalecer hábitos saludables.",
+    desc: "Creación de una huerta educativa abierta a visitas guiadas, orientada a centros deportivos, escuelas y organizaciones sociales, para enseñar el cultivo de alimentos y promover el cuidado del medio ambiente.",
   },
 ];
 
