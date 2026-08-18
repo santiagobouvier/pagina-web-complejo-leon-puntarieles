@@ -305,19 +305,15 @@ const Index = () => {
         <section className="services py-5 py-lg-11 py-xl-12 bg-dark" id="services">
           <div className="container">
             <div className="d-flex flex-column gap-5 gap-xl-10">
-              <div className="row gap-7 gap-xl-0 align-items-center">
-                <div className="col-xl-8 col-xxl-7">
-                  <div className="row">
-                    <div className="col-xxl-10">
-                      <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                        <span className="eyebrow eyebrow-light">Por qué existe el proyecto</span>
-                        <h2 className="mb-0 text-white">Compromiso Social y Comunitario</h2>
-                        <p className="fs-5 mb-0 text-white text-opacity-70">El León de la Sierra nace como un punto de encuentro donde el deporte, la educación, la conciencia ambiental y la inclusión social conviven en equilibrio, generando oportunidades reales para la comunidad de Punta de Rieles.</p>
-                      </div>
-                    </div>
+              <div className="row align-items-center gx-5">
+                <div className="col-xl-7 col-lg-6">
+                  <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <span className="eyebrow eyebrow-light">Por qué existe el proyecto</span>
+                    <h2 className="mb-0 text-white">Compromiso Social y Comunitario</h2>
+                    <p className="fs-5 mb-0 text-white text-opacity-70">El León de la Sierra nace como un punto de encuentro donde el deporte, la educación, la conciencia ambiental y la inclusión social conviven en equilibrio, generando oportunidades reales para la comunidad de Punta de Rieles.</p>
                   </div>
                 </div>
-                <div className="col-xl-4 col-xxl-5">
+                <div className="col-xl-5 col-lg-6 mt-5 mt-lg-0">
                   <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                     <img
                       src={fotoEquipo.url}
@@ -329,15 +325,19 @@ const Index = () => {
                 </div>
               </div>
               <div className="services-tab">
-                <div className="row gap-5 gap-xl-0">
+                <div className="row">
                   <div className="col-xl-12">
                     <div className="d-flex flex-column gap-5">
                       <ul className="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                         {compromisoData.map((item, i) => (
                           <li key={i} className="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                            <div className="row w-100 align-items-center gx-3 gy-3 gy-lg-0">
+                            <div className="row w-100 align-items-center gx-3 gy-4 gy-lg-0">
                               <div className="col-lg-1 col-md-2 col-12 text-lg-start text-center">
-                                <Iconify icon={item.icon} className="fs-1 text-primary" />
+                                <Iconify
+                                  icon={item.icon}
+                                  className="text-primary hover-scale"
+                                  style={{ fontSize: "3rem" }}
+                                />
                               </div>
                               <div className="col-lg-4 col-md-10 col-12">
                                 <h4 className="mb-0 text-white text-lg-start text-center">{item.title}</h4>
