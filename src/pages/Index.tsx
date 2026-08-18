@@ -333,7 +333,7 @@ const Index = () => {
                           <li key={i} className="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
                             <div className="row w-100 align-items-center gx-3 gy-4 gy-lg-0">
                               <div className="col-lg-1 col-md-2 col-12 text-lg-start text-center">
-                                <span className="d-inline-flex text-primary hover-scale" style={{ fontSize: "3rem" }}>
+                                <span className="d-inline-flex text-primary hover-scale" style={{ fontSize: "4rem" }}>
                                   <Iconify icon={item.icon} />
                                 </span>
                               </div>
