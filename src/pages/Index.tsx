@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
+import dbLogoAsset from "@/assets/logo-digitalbuilders.webp.asset.json";
 
 declare global {
   interface Window {
@@ -424,15 +425,13 @@ const Index = () => {
           <div className="firma-db">
             <p className="firma-rotulo">Sitio desarrollado por</p>
             <a href="https://www.digitalbuilders.net" target="_blank" rel="noreferrer" aria-label="Digital Builders - Desarrollo y diseño web">
-              <svg className="db-marca" width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <rect x="1" y="1" width="46" height="46" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="1.5" />
-                <rect x="25.5" y="6.5" width="16" height="16" stroke="#ffffff" strokeOpacity="0.85" strokeWidth="1.5" />
-                <rect x="6" y="26" width="17" height="16" fill="#8CCCEA" />
-              </svg>
-              <span>
-                <span className="db-nombre">Digital Builders</span>
-                <span className="db-bajada">Desarrollo y diseño web</span>
-              </span>
+              <img
+                src={dbLogoAsset.url}
+                alt="Digital Builders - Desarrollo y diseño web"
+                className="db-marca"
+                style={{ width: 120, height: 'auto' }}
+                loading="lazy"
+              />
             </a>
           </div>
         </div>
