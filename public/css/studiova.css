@@ -903,6 +903,38 @@ body h6 { font-size: 1rem; }
   100% { transform: translateY(15px); opacity: 0; }
 }
 
+/* Scroll cue en mobile: no se superpone con el título */
+@media (max-width: 991.98px) {
+  .banner-section .container > .d-flex {
+    padding-bottom: 4.5rem !important;
+  }
+  .scroll-cue {
+    bottom: 14px;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 0.5625rem;
+    letter-spacing: 0.14em;
+  }
+  .scroll-cue .riel {
+    width: 17px;
+    height: 27px;
+    border-radius: 10px;
+    border-width: 1px;
+  }
+  .scroll-cue .riel::after {
+    top: 5px;
+    height: 5px;
+    width: 2px;
+    margin-left: -1px;
+  }
+  @keyframes bajar {
+    0%   { transform: translateY(0); opacity: 0; }
+    35%  { opacity: 1; }
+    100% { transform: translateY(11px); opacity: 0; }
+  }
+}
+
+
 /* ==============================
    Etapas del proyecto
    ============================== */
