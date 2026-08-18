@@ -429,7 +429,7 @@ const Index = () => {
                 src={dbLogoAsset.url}
                 alt="Digital Builders - Desarrollo y diseño web"
                 className="db-marca"
-                style={{ width: 120, height: 'auto' }}
+                style={{ width: 140, height: 'auto' }}
                 loading="lazy"
               />
             </a>
