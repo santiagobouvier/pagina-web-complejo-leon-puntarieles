@@ -1056,3 +1056,16 @@ body h6 { font-size: 1rem; }
   color: rgba(255,255,255,0.55);
   margin-top: 2px;
 }
+
+/* Fotos reales dentro de Compromiso Social: recorte parejo y responsive */
+.services-tab .nav-item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 991.98px) {
+  .services-tab .nav-item img { aspect-ratio: 16 / 9; }
+  .resources-img-blog img { height: 260px; }
+}
