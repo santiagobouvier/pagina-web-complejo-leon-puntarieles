@@ -574,32 +574,32 @@ const actividadesData = [
 
 const compromisoData = [
   {
-    img: fotoEquipo.url,
+    icon: "lucide:hand-heart",
     title: "Cesión gratuita de canchas",
     desc: "El complejo ofrecerá horarios sin costo para escuelas, entes u organizaciones sociales con las que se formen acuerdos. Esta iniciativa busca garantizar el acceso igualitario al deporte para niños, niñas y jóvenes de distintos contextos.",
   },
   {
-    img: "/images/resources/entorno.png",
+    icon: "lucide:building-2",
     title: "Mejora del entorno urbano",
     desc: "Se propone colaborar activamente con el desarrollo de la zona, gestionando el pavimentado e iluminación del acceso al predio y su área de influencia, generando así un entorno más seguro, accesible y digno para todos.",
   },
   {
-    img: "/images/resources/empleo.png",
+    icon: "lucide:briefcase",
     title: "Generación de empleo local",
     desc: "El funcionamiento del complejo permitirá crear oportunidades laborales para entrenadores, personal de mantenimiento, empresas de maquinaria y muchas otras personas que formarán parte del día a día del proyecto.",
   },
   {
-    img: fotoJornada.url,
+    icon: "lucide:book-open",
     title: "Espacio educativo y de recreación",
     desc: "Además del deporte, se generarán espacios orientados a la educación, la contención social y el disfrute comunitario, fortaleciendo el tejido social de la zona a través de actividades organizadas y abiertas a todos.",
   },
   {
-    img: "/images/resources/sustentabilidad.png",
+    icon: "lucide:sun",
     title: "Autosustentabilidad energética y ambiental",
     desc: "El predio estará orientado al uso de energía solar y la recolección de agua, incorporando prácticas sustentables que reduzcan el impacto ambiental y sirvan como ejemplo para la comunidad.",
   },
   {
-    img: "/images/resources/conciencia-alimentaria.png",
+    icon: "lucide:apple",
     title: "Conciencia alimentaria y cuidado del entorno",
     desc: "Se impulsará la plantación de árboles frutales y vegetales, fomentando el cultivo propio, la alimentación saludable y el uso consciente de los recursos naturales como parte del aprendizaje diario.",
   },
