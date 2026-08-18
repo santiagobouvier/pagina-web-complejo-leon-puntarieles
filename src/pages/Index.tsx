@@ -539,7 +539,7 @@ const actividadesData = [
   },
   {
     estado: "activo",
-    img: "/images/resources/resources-1.jpg",
+    img: "/images/resources/plaza-punta-de-rieles.jpg",
     title: "Encuentros con el Barrio",
     desc: "Organizamos jornadas abiertas para las familias de Punta de Rieles, con juegos, merienda y actividades para los más chicos. El predio ya funciona como punto de encuentro de la zona.",
   },
