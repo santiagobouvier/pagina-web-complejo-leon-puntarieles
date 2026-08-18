@@ -333,11 +333,9 @@ const Index = () => {
                           <li key={i} className="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
                             <div className="row w-100 align-items-center gx-3 gy-4 gy-lg-0">
                               <div className="col-lg-1 col-md-2 col-12 text-lg-start text-center">
-                                <Iconify
-                                  icon={item.icon}
-                                  className="text-primary hover-scale"
-                                  style={{ fontSize: "3rem" }}
-                                />
+                                <span className="d-inline-flex text-primary hover-scale" style={{ fontSize: "3rem" }}>
+                                  <Iconify icon={item.icon} />
+                                </span>
                               </div>
                               <div className="col-lg-4 col-md-10 col-12">
                                 <h4 className="mb-0 text-white text-lg-start text-center">{item.title}</h4>
