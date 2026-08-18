@@ -118,22 +118,24 @@ const Index = () => {
       <div className="page-wrapper overflow-hidden">
         {/* Banner Section */}
         <section id="inicio" className="banner-section position-relative d-flex align-items-end min-vh-100">
-          <img src="/images/resources/competencia-deportiva.png" alt="Fútbol en El León de la Sierra" className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" />
+          <div className="banner-media">
+            <img src="/images/resources/competencia-deportiva.png" alt="Fútbol en El León de la Sierra" />
+          </div>
           <div className="container">
             <div className="d-flex flex-column gap-4 pb-8 position-relative z-1">
-              <div className="row align-items-center">
-                <div className="col-xl-12">
-                  <div className="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                    <p className="mb-0 text-white fs-5 text-opacity-70">
-                      Ya estamos en actividad. Fútbol, formación y <span className="text-primary">compromiso social</span> en Punta de Rieles, en desarrollo constante.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <h1 className="mb-0 fs-16 text-white lh-1">Complejo Deportivo El León de la Sierra</h1>
-              </div>
+              <span className="hero-chip reveal reveal-1">
+                <span className="punto"></span>
+                En obra · Ya en actividad
+              </span>
+              <p className="mb-0 text-white fs-5 text-opacity-70 reveal reveal-2" style={{ maxWidth: 640 }}>
+                Fútbol, formación y <span className="text-primary">compromiso social</span> en Punta de Rieles. Un complejo que se construye mientras ya se juega.
+              </p>
+              <h1 className="mb-0 fs-16 text-white lh-1 reveal reveal-3">Complejo Deportivo El León de la Sierra</h1>
             </div>
+          </div>
+          <div className="scroll-cue reveal reveal-4">
+            <span className="riel"></span>
+            <span>Deslizá</span>
           </div>
         </section>
 
@@ -174,6 +176,27 @@ const Index = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Etapas del proyecto */}
+        <section className="etapas">
+          <div className="container">
+            <div className="d-flex flex-column gap-3" data-aos="fade-up" data-aos-duration="1000">
+              <span className="eyebrow">Dónde estamos parados</span>
+              <h2 className="mb-0">Etapas del proyecto</h2>
+              <p className="fs-5 mb-0" style={{ maxWidth: 720 }}>El complejo se construye por partes. Esto es lo que ya está en pie, lo que se está levantando ahora y lo que viene después.</p>
+            </div>
+            <div className="etapas-riel">
+              {etapasData.map((et, i) => (
+                <div key={i} className={`etapa ${et.estado}`} data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="1000">
+                  <span className="marca"></span>
+                  <span className="etapa-estado">{et.rotulo}</span>
+                  <h4>{et.title}</h4>
+                  <p>{et.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -436,6 +459,33 @@ const LeafIcon = () => (
     </svg>
   </span>
 );
+
+const etapasData = [
+  {
+    estado: "hecha",
+    rotulo: "Listo",
+    title: "El predio",
+    desc: "Terreno, accesos y el ingreso señalizado. El espacio ya está abierto y en uso.",
+  },
+  {
+    estado: "hecha",
+    rotulo: "Listo",
+    title: "Actividad deportiva",
+    desc: "La escuela de formación y la competencia ya funcionan, con el equipo de entrenadores trabajando.",
+  },
+  {
+    estado: "ahora",
+    rotulo: "En obra",
+    title: "Las canchas",
+    desc: "Siete canchas de fútbol 11 en construcción, que se van a habilitar de a una a medida que estén.",
+  },
+  {
+    estado: "futura",
+    rotulo: "Proyectado",
+    title: "Salón y huerta",
+    desc: "Salón multipropósito para eventos y la huerta didáctica abierta a escuelas y organizaciones.",
+  },
+];
 
 const propuestaData = [
   {
