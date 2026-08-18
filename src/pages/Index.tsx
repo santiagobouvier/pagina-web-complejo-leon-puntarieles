@@ -137,6 +137,20 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Franja de estado */}
+        <section className="franja-estado">
+          <div className="container">
+            <div className="row align-items-center gy-4">
+              <div className="col-lg-7">
+                <p className="franja-titulo">Ya estamos en actividad. El complejo, <em>en desarrollo constante</em>.</p>
+              </div>
+              <div className="col-lg-5">
+                <p>Hoy el predio funciona con lo que ya está en pie: la escuela de formación, la competencia y los encuentros con el barrio. La obra avanza en paralelo, por etapas.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* El Complejo */}
         <section id="complejo" className="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
           <div className="container">
@@ -146,6 +160,7 @@ const Index = () => {
                   <div className="row">
                     <div className="col-xxl-12">
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <span className="eyebrow">El predio</span>
                         <h2 className="mb-0">El Complejo</h2>
                         <p className="fs-5 mb-0">Un espacio deportivo, educativo y social ubicado en el corazón de Punta de Rieles, una zona con enorme potencial humano y deportivo.</p>
                         <p className="fs-5 mb-0">Hoy el predio ya está en uso: se entrena, se juega y se organizan actividades abiertas al barrio, mientras el complejo toma forma. El proyecto contempla siete canchas de fútbol 11 —cinco para adultos y dos pensadas para niños y jóvenes— que se irán habilitando por etapas.</p>
@@ -169,6 +184,7 @@ const Index = () => {
             <div className="row">
               <div className="col-xxl-9">
                 <div className="d-flex flex-column gap-6 mb-8" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                  <span className="eyebrow">Cómo trabajamos</span>
                   <h2 className="mb-0">Nuestra Propuesta</h2>
                   <p className="fs-5 mb-0">Somos diferentes al resto. Trabajamos con un equipo de entrenadores con Licencia PRO, y nuestro foco está puesto en el proceso de aprendizaje antes que en el resultado inmediato.</p>
                   <p className="fs-5 mb-0">Recibimos a cada jugador y jugadora desde el punto en que está, sin discriminación de ningún tipo, y lo acompañamos para que mejore. Desde la escuelita hasta adolescentes y mayores.</p>
@@ -177,11 +193,11 @@ const Index = () => {
             </div>
             <div className="row">
               {propuestaData.map((item, i) => (
-                <div key={i} className="col-lg-6 col-xl-3 mb-7">
-                  <div className="d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="1000">
-                    <Iconify icon={item.icon} className="fs-2 text-primary" />
-                    <h4 className="mb-0">{item.title}</h4>
-                    <p className="mb-0">{item.desc}</p>
+                <div key={i} className="col-md-6 col-xl-3 mb-6">
+                  <div className="pilar" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="1000">
+                    <span className="pilar-num">0{i + 1}</span>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -195,6 +211,7 @@ const Index = () => {
             <div className="row">
               <div className="col-xxl-8 mb-7">
                 <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                  <span className="eyebrow">Qué pasa en el predio</span>
                   <h2 className="mb-0">Actividades</h2>
                   <p className="fs-5 mb-0">Esto es lo que ya está funcionando, y lo que viene en camino a medida que el complejo se desarrolla.</p>
                 </div>
@@ -202,17 +219,21 @@ const Index = () => {
             </div>
 
             <div className="row">
-              <div className="col-12 mb-6">
-                <h4 className="mb-0" data-aos="fade-up" data-aos-duration="1000">En funcionamiento</h4>
+              <div className="col-12">
+                <div className="grupo-actividades" data-aos="fade-up" data-aos-duration="1000">
+                  <h3>En funcionamiento</h3>
+                  <p className="grupo-nota">Lo que ya se puede hacer hoy en el predio</p>
+                </div>
               </div>
               {actividadesData.filter((a) => a.estado === "activo").map((act, i) => (
                 <div key={i} className="col-lg-6 mb-7">
-                  <div className="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                  <div className="resources d-flex flex-column gap-5" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                     <div className="resources-img resources-img-blog position-relative overflow-hidden d-block">
                       <img src={act.img} alt={act.title} className="img-fluid" />
                     </div>
                     <div className="resources-details">
-                      <h4 className="mb-0" style={{ marginBottom: 10 }}>{act.title}</h4>
+                      <span className="badge-estado badge-activo mb-3">Funcionando</span>
+                      <h4 style={{ marginBottom: 10 }}>{act.title}</h4>
                       <p className="mb-0">{act.desc}</p>
                       {act.desc2 && <><br /><p className="mb-0">{act.desc2}</p></>}
                     </div>
@@ -222,18 +243,24 @@ const Index = () => {
             </div>
 
             <div className="row mt-6">
-              <div className="col-12 mb-6">
-                <h4 className="mb-0" data-aos="fade-up" data-aos-duration="1000">En desarrollo</h4>
-                <p className="mb-0 mt-2">Etapas previstas del proyecto, en construcción progresiva.</p>
+              <div className="col-12">
+                <div className="grupo-actividades" data-aos="fade-up" data-aos-duration="1000">
+                  <h3>En desarrollo</h3>
+                  <p className="grupo-nota">Etapas previstas del proyecto, todavía en obra</p>
+                </div>
               </div>
               {actividadesData.filter((a) => a.estado === "desarrollo").map((act, i) => (
                 <div key={i} className="col-lg-6 mb-7">
-                  <div className="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                    <div className="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                      <img src={act.img} alt={act.title} className="img-fluid" />
+                  <div className="resources resources-pendiente d-flex flex-column gap-5" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div>
+                      <div className="resources-img resources-img-blog position-relative overflow-hidden d-block">
+                        <img src={act.img} alt={act.title} className="img-fluid" />
+                      </div>
+                      <p className="pie-imagen mb-0">Imagen de referencia del proyecto</p>
                     </div>
                     <div className="resources-details">
-                      <h4 className="mb-0" style={{ marginBottom: 10 }}>{act.title}</h4>
+                      <span className="badge-estado badge-obra mb-3">Todavía en obra</span>
+                      <h4 style={{ marginBottom: 10 }}>{act.title}</h4>
                       <p className="mb-0">{act.desc}</p>
                       {act.desc2 && <><br /><p className="mb-0">{act.desc2}</p></>}
                     </div>
@@ -255,6 +282,7 @@ const Index = () => {
                   <div className="row">
                     <div className="col-xxl-8">
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <span className="eyebrow eyebrow-light">Por qué existe el proyecto</span>
                         <h2 className="mb-0 text-white">Compromiso Social y Comunitario</h2>
                         <p className="fs-5 mb-0 text-white text-opacity-70">El León de la Sierra nace como un punto de encuentro donde el deporte, la educación, la conciencia ambiental y la inclusión social conviven en equilibrio, generando oportunidades reales para la comunidad de Punta de Rieles.</p>
                       </div>
@@ -300,6 +328,7 @@ const Index = () => {
                   <div className="row">
                     <div className="col-xxl-8">
                       <div className="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <span className="eyebrow">Contacto</span>
                         <h2 className="mb-0">Hablemos</h2>
                       </div>
                     </div>

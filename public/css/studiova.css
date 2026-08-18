@@ -579,3 +579,194 @@ img.img-fluid {
   height: 20px;
   display: inline-block;
 }
+
+/* ==============================
+   Jerarquia tipografica
+   (Tailwind preflight resetea h1-h6; se restauran aca)
+   ============================== */
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+body h1 { font-size: 3.75rem; }
+body h2 { font-size: 2.75rem; }
+body h3 { font-size: 2rem; }
+body h4 { font-size: 1.375rem; }
+body h5 { font-size: 1.125rem; }
+body h6 { font-size: 1rem; }
+
+@media (max-width: 991px) {
+  body h1 { font-size: 2.5rem; }
+  body h2 { font-size: 2rem; }
+  body h3 { font-size: 1.625rem; }
+  body h4 { font-size: 1.25rem; }
+}
+
+/* Etiqueta chica arriba del titulo de seccion */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b7b;
+  margin-bottom: 0.25rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: #c5f536;
+  display: inline-block;
+}
+
+.eyebrow-light { color: rgba(255,255,255,0.65); }
+
+/* ==============================
+   Estado: en funcionamiento / en obra
+   ============================== */
+.franja-estado {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 2.5rem 0;
+}
+
+.franja-estado .franja-titulo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.franja-estado .franja-titulo em {
+  font-style: normal;
+  color: #c5f536;
+}
+
+.franja-estado p {
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.badge-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.badge-activo {
+  background: #c5f536;
+  color: #1a1a2e;
+}
+
+.badge-activo::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1a1a2e;
+}
+
+.badge-obra {
+  background: transparent;
+  border: 1px dashed #b4b4c0;
+  color: #6b6b7b;
+}
+
+/* Tarjetas de lo que todavia no existe */
+.resources-pendiente .resources-img {
+  border: 2px dashed #d4d4dd;
+  padding: 6px;
+  background: #fafafa;
+}
+
+.resources-pendiente .resources-img img {
+  filter: grayscale(1) contrast(0.95);
+  opacity: 0.6;
+  border-radius: 10px;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.resources-pendiente:hover .resources-img img {
+  filter: grayscale(0.4);
+  opacity: 0.8;
+}
+
+.resources-pendiente .resources-details h4 { color: #4a4a5a; }
+
+.pie-imagen {
+  font-size: 0.75rem;
+  color: #9a9aa8;
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+/* Encabezado de grupo dentro de Actividades */
+.grupo-actividades {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e6e6ec;
+  margin-bottom: 2rem;
+}
+
+.grupo-actividades h3 { margin: 0; }
+
+.grupo-actividades .grupo-nota {
+  font-size: 0.9375rem;
+  color: #7a7a88;
+  margin: 0;
+}
+
+/* Pilares de la propuesta */
+.pilar {
+  height: 100%;
+  padding: 1.75rem 1.5rem;
+  border-radius: 16px;
+  background: #f7f7f9;
+  border: 1px solid #ececf2;
+  transition: all 0.3s ease;
+}
+
+.pilar:hover {
+  background: #fff;
+  border-color: #c5f536;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(26,26,46,0.08);
+}
+
+.pilar h4 { margin-bottom: 0.5rem; }
+
+.pilar p {
+  color: #666;
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.pilar-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #c5f536;
+  display: block;
+  margin-bottom: 0.75rem;
+  -webkit-text-stroke: 0.3px #9bbf1f;
+}
