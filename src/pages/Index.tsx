@@ -420,9 +420,22 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <p className="mb-0 text-white text-opacity-70 text-md-center mt-10" style={{ textAlign: "center", marginRight: 30 }}>
-          Sitio desarrollado por / <a className="text-white" href="https://www.digitalbuilders.net" target="_blank" rel="noreferrer">Digital Builders</a>
-        </p>
+        <div className="container">
+          <div className="firma-db">
+            <p className="firma-rotulo">Sitio desarrollado por</p>
+            <a href="https://www.digitalbuilders.net" target="_blank" rel="noreferrer" aria-label="Digital Builders - Desarrollo y diseño web">
+              <svg className="db-marca" width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="1" y="1" width="46" height="46" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="1.5" />
+                <rect x="25.5" y="6.5" width="16" height="16" stroke="#ffffff" strokeOpacity="0.85" strokeWidth="1.5" />
+                <rect x="6" y="26" width="17" height="16" fill="#8CCCEA" />
+              </svg>
+              <span>
+                <span className="db-nombre">Digital Builders</span>
+                <span className="db-bajada">Desarrollo y diseño web</span>
+              </span>
+            </a>
+          </div>
+        </div>
       </footer>
 
       {/* Scroll to Top */}
@@ -526,7 +539,7 @@ const actividadesData = [
   },
   {
     estado: "activo",
-    img: "/images/resources/resources-1.jpg",
+    img: "/images/about/about-img.jpg",
     title: "Encuentros con el Barrio",
     desc: "Organizamos jornadas abiertas para las familias de Punta de Rieles, con juegos, merienda y actividades para los más chicos. El predio ya funciona como punto de encuentro de la zona.",
   },

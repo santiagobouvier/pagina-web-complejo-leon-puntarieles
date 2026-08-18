@@ -1002,3 +1002,57 @@ body h6 { font-size: 1rem; }
   .etapa.ahora .marca::after { animation: none !important; }
   .reveal { animation: none !important; opacity: 1; transform: none; }
 }
+
+/* ==============================
+   Firma de Digital Builders (pie)
+   ============================== */
+.firma-db {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.firma-db .firma-rotulo {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+
+.firma-db a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.firma-db a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.firma-db .db-marca { flex-shrink: 0; }
+
+.firma-db .db-nombre {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.firma-db .db-bajada {
+  display: block;
+  font-size: 0.5625rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
