@@ -341,6 +341,9 @@ const Index = () => {
                                 <h4 className="mb-0 text-white text-lg-start text-center">{item.title}</h4>
                               </div>
                               <div className="col-lg-7 col-md-12 col-12">
+                                {item.achievement && (
+                                  <p className="text-primary fw-semibold mb-3 text-lg-start text-center">{item.achievement}</p>
+                                )}
                                 <p className="text-white text-opacity-70 mb-0 text-lg-start text-center">{item.desc}</p>
                               </div>
                             </div>
@@ -587,9 +590,10 @@ const compromisoData = [
     desc: "El complejo ofrecerá horarios sin costo para escuelas, entes u organizaciones sociales con las que se formen acuerdos. Esta iniciativa busca garantizar el acceso igualitario al deporte para niños, niñas y jóvenes de distintos contextos.",
   },
   {
-    icon: "lucide:building-2",
-    title: "Mejora del entorno urbano",
-    desc: "Se propone colaborar activamente con el desarrollo de la zona, gestionando el pavimentado e iluminación del acceso al predio y su área de influencia, generando así un entorno más seguro, accesible y digno para todos.",
+    icon: "lucide:lightbulb",
+    title: "Iluminación en Camino Delfín",
+    achievement: "💡 Objetivo logrado: ya se instaló el alumbrado en Camino Delfín",
+    desc: "El alumbrado público de Camino Delfín ya es una realidad para el barrio. El pavimentado del acceso al predio y su área de influencia sigue siendo una aspiración para contribuir a un entorno más seguro, accesible y digno para todos.",
   },
   {
     icon: "lucide:briefcase",
