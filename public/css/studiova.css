@@ -1101,3 +1101,50 @@ body h6 { font-size: 1rem; }
   .services-tab .nav-item img { aspect-ratio: 16 / 9; }
   .resources-img-blog img { height: 260px; }
 }
+/* Fotografías reales del predio: continuidad con la identidad verde y oscura. */
+.terrain-photo { margin: 0; min-width: 0; }
+.terrain-photo-button { display: block; position: relative; width: 100%; padding: 0; border: 0; background: #20232c; overflow: hidden; border-radius: 18px; cursor: zoom-in; }
+.terrain-photo-button img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 2.17; transition: transform .45s ease; }
+.terrain-photo-button:hover img { transform: scale(1.035); }
+.terrain-photo-button:focus-visible { outline: 3px solid #91b721; outline-offset: 5px; }
+.photo-expand { position: absolute; bottom: 16px; right: 16px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #c5f536; color: #1a1a2e; font-size: 24px; box-shadow: 0 2px 10px #0003; }
+.terrain-photo figcaption { margin-top: 12px; font-size: .8125rem; color: #686878; line-height: 1.5; }
+.predio-panorama .terrain-photo-button img { max-height: 430px; }
+.terrain-progress { padding: 90px 0; background: #1a1a2e; }
+.progress-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 36px; }
+.progress-heading > div { max-width: 580px; }
+.progress-heading p { max-width: 380px; color: #d3d3db; margin: 0; font-size: 1.0625rem; line-height: 1.7; }
+.progress-gallery { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; align-items: start; }
+.progress-gallery .progress-feature { grid-row: span 2; }
+.progress-gallery .progress-feature img { aspect-ratio: 1 / 1; object-position: 62% center; }
+.progress-gallery .progress-wide { grid-column: 1 / -1; }
+.progress-gallery .progress-wide img { aspect-ratio: 3 / 1; }
+.progress-gallery figcaption { color: #d3d3db; }
+.progress-note { border-top: 1px solid #ffffff26; margin: 28px 0 0; padding-top: 20px; color: #b9b9c6; font-size: .8125rem; }
+.contact-terrain { margin-top: 28px; }
+.contact-terrain img { aspect-ratio: 4 / 3; }
+[role="dialog"].terrain-lightbox { width: calc(100vw - 32px); max-width: 1100px; padding: 40px 16px 16px; background: #1a1a2e; border: 1px solid #ffffff33; color: white; gap: 12px; }
+.terrain-lightbox > img { width: 100%; height: auto; max-height: 75dvh; object-fit: contain; }
+.terrain-lightbox > p { margin: 0; font-size: .875rem; color: #d3d3db; }
+.terrain-lightbox > button { color: white; }
+#avances { scroll-margin-top: 110px; }
+@media (max-width: 991.98px) {
+  .terrain-progress { padding: 56px 0; }
+  .progress-heading { flex-direction: column; align-items: start; gap: 20px; }
+  .progress-heading p { max-width: 640px; }
+}
+@media (max-width: 575.98px) {
+  .progress-gallery { grid-template-columns: 1fr; gap: 24px; }
+  .progress-gallery .progress-feature { grid-row: auto; }
+  .progress-gallery .progress-feature img { aspect-ratio: 4 / 3; }
+  .progress-gallery .progress-wide { grid-column: auto; }
+  .progress-gallery .progress-wide img { aspect-ratio: 2.17; }
+  .terrain-photo-button { border-radius: 12px; }
+  .contact-terrain img { aspect-ratio: 2.17; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .terrain-photo-button img { transition: none; }
+  .terrain-photo-button:hover img { transform: none; }
+}
+.terrain-photo-overlay { z-index: 10000 !important; }
+[role="dialog"].terrain-lightbox { z-index: 10001; }
