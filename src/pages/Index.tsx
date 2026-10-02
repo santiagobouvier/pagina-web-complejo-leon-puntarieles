@@ -121,7 +121,7 @@ const Index = () => {
         {/* Banner Section */}
         <section id="inicio" className="banner-section position-relative d-flex align-items-end min-vh-100">
           <div className="banner-media">
-            <img src="/images/avances/terreno-01.webp" srcSet="/images/avances/terreno-01-720.webp 720w, /images/avances/terreno-01.webp 1600w" sizes="100vw" alt="Vista real del terreno del Complejo Deportivo El León de la Sierra en Punta de Rieles" width="1600" height="737" fetchPriority="high" style={{ objectPosition: "center 48%" }} />
+            <img src="/images/resources/foto-porton.jpg" alt="Entrada al predio del Complejo Deportivo El León de la Sierra en Punta de Rieles" width="1500" height="2000" fetchPriority="high" style={{ objectPosition: "center 45%" }} />
           </div>
           <div className="container">
             <div className="d-flex flex-column gap-4 pb-8 position-relative z-1">
@@ -218,7 +218,8 @@ const Index = () => {
               <TerrainPhoto index={4} className="progress-feature" caption="Preparación del terreno" />
               <TerrainPhoto index={2} caption="El suelo en transformación" />
               <TerrainPhoto index={3} caption="Trabajos en el predio" />
-              <TerrainPhoto index={5} className="progress-wide" caption="El complejo, en desarrollo constante" />
+              <TerrainPhoto index={5} caption="El complejo, en desarrollo constante" />
+              <TerrainPhoto index={0} caption="Vista abierta del predio" />
             </div>
             <p className="progress-note">Fotografías del predio en obra · Tocá una imagen para ampliarla</p>
           </div>
