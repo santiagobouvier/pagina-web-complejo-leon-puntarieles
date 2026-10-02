@@ -1,14 +1,10 @@
 import { useEffect } from "react";
+import { TerrainPhoto } from "@/components/TerrainPhoto";
 import Iconify from "@/components/Iconify";
-import dbLogoAsset from "@/assets/logo-digitalbuilders.webp.asset.json";
-import fotoPorton from "@/assets/foto-porton.jpg.asset.json";
-import fotoMerienda from "@/assets/foto-merienda.jpg.asset.json";
-import fotoJornada from "@/assets/foto-jornada.jpg.asset.json";
-import fotoEquipo from "@/assets/foto-equipo.jpg.asset.json";
 
 declare global {
   interface Window {
-    AOS: any;
+    AOS?: { init: (options: { once: boolean }) => void };
   }
 }
 
@@ -101,6 +97,7 @@ const Index = () => {
                             <LeafIcon /> Nuestra Propuesta
                           </a>
                         </li>
+                        <li className="header-item"><a href="#avances" className="header-link hstack gap-2 fs-7 fw-bold text-dark"><LeafIcon /> Avances del predio</a></li>
                         <li className="header-item">
                           <a href="#contacto" className="header-link hstack gap-2 fs-7 fw-bold text-dark">
                             <LeafIcon /> Contacto
@@ -124,7 +121,7 @@ const Index = () => {
         {/* Banner Section */}
         <section id="inicio" className="banner-section position-relative d-flex align-items-end min-vh-100">
           <div className="banner-media">
-            <img src={fotoPorton.url} alt="Entrada al predio del Complejo Deportivo El León de la Sierra en Punta de Rieles" style={{ objectPosition: "center 45%" }} />
+            <img src="/images/resources/foto-porton.jpg" alt="Entrada al predio del Complejo Deportivo El León de la Sierra en Punta de Rieles" width="1500" height="2000" fetchPriority="high" style={{ objectPosition: "center 45%" }} />
           </div>
           <div className="container">
             <div className="d-flex flex-column gap-4 pb-8 position-relative z-1">
@@ -175,6 +172,7 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+                  <TerrainPhoto index={1} className="predio-panorama" caption="El predio, en preparación. Fotografías reales del complejo." />
                   <a href="#contacto" className="btn" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
                     <span className="btn-text">Hablemos</span>
                     <Iconify icon="lucide:arrow-up-right" className="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm" />
@@ -203,6 +201,27 @@ const Index = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Registro real de la preparación del terreno */}
+        <section id="avances" className="terrain-progress">
+          <div className="container">
+            <div className="progress-heading">
+              <div>
+                <span className="eyebrow eyebrow-light">El proyecto toma forma</span>
+                <h2 className="text-white mb-0">Avances del predio</h2>
+              </div>
+              <p>La preparación del terreno, vista desde adentro. Un registro real del trabajo que acompaña el desarrollo del complejo.</p>
+            </div>
+            <div className="progress-gallery">
+              <TerrainPhoto index={4} className="progress-feature" caption="Preparación del terreno" />
+              <TerrainPhoto index={2} caption="El suelo en transformación" />
+              <TerrainPhoto index={3} caption="Trabajos en el predio" />
+              <TerrainPhoto index={5} caption="El complejo, en desarrollo constante" />
+              <TerrainPhoto index={0} caption="Vista abierta del predio" />
+            </div>
+            <p className="progress-note">Fotografías del predio en obra · Tocá una imagen para ampliarla</p>
           </div>
         </section>
 
@@ -316,7 +335,7 @@ const Index = () => {
                 <div className="col-xl-5 col-lg-6 mt-5 mt-lg-0">
                   <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                     <img
-                      src={fotoEquipo.url}
+                      src="/images/resources/foto-equipo.jpg"
                       alt="Equipo Leones de Punta Rieles"
                       className="img-fluid rounded-4 w-100"
                       style={{ aspectRatio: "4 / 3", objectFit: "cover" }}
@@ -375,13 +394,14 @@ const Index = () => {
                 </div>
               </div>
               <div className="row justify-content-between gap-7 gap-xl-0">
-                <div className="col-xl-3">
+                <div className="col-xl-4">
                   <p className="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                     ¿Querés sumar a un chico o una chica a la escuela, hacer una consulta o conocer más sobre el proyecto?<br /><br />
                     Estamos a disposición para conversar, coordinar una visita o avanzar con cualquier propuesta. Contactanos por los medios que te dejamos abajo.
                   </p>
+                  <TerrainPhoto index={6} className="contact-terrain" caption="El entorno del complejo en Punta de Rieles" />
                 </div>
-                <div className="col-xl-8">
+                <div className="col-xl-7">
                   <form className="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" onSubmit={(e) => {
                     e.preventDefault();
                     const fd = new FormData(e.currentTarget);
@@ -441,7 +461,7 @@ const Index = () => {
             <p className="firma-rotulo">Sitio desarrollado por</p>
             <a href="https://www.digitalbuilders.net" target="_blank" rel="noreferrer" aria-label="Digital Builders - Desarrollo y diseño web">
               <img
-                src={dbLogoAsset.url}
+                src="/images/logos/logo-digitalbuilders.webp"
                 alt="Digital Builders - Desarrollo y diseño web"
                 className="db-marca"
                 style={{ width: 140, height: 'auto' }}
@@ -553,7 +573,7 @@ const actividadesData = [
   },
   {
     estado: "activo",
-    img: fotoMerienda.url,
+    img: "/images/resources/foto-merienda.jpg",
     title: "Encuentros con el Barrio",
     desc: "Organizamos jornadas abiertas para las familias de Punta de Rieles, con juegos, merienda y actividades para los más chicos. El predio ya funciona como punto de encuentro de la zona.",
   },
